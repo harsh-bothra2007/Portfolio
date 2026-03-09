@@ -1,162 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harsh Bothra | Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI, sans-serif;
+scroll-behavior:smooth;
+}
 
 body{
-    background:#f4f6f8;
-    color:#333;
+background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+color:#e2e8f0;
+line-height:1.7;
+letter-spacing:0.2px;
 }
 
-header{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:80px 20px;
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 10%;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
 }
 
-header h1{
-    font-size:2.8rem;
+nav h2{
+color:#60a5fa;
 }
 
-header p{
-    margin-top:10px;
-    color:#cbd5e1;
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
 }
+
+nav a{
+color:#cbd5f5;
+text-decoration:none;
+font-size:14px;
+}
+
+nav a:hover{
+color:#60a5fa;
+}
+
+/* HERO */
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:100px 10%;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:52px;
+margin-bottom:12px;
+font-weight:700;
+letter-spacing:0.4px;
+}
+
+.hero-text span{
+color:#60a5fa;
+}
+
+.hero-text p{
+color:#94a3b8;
+margin-bottom:18px;
+font-size:16px;
+line-height:1.7;
+}
+
+/* BUTTONS */
+
+.buttons a{
+display:inline-block;
+margin-right:15px;
+padding:10px 18px;
+border-radius:8px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+transition:0.2s;
+}
+
+.buttons a:hover{
+transform:translateY(-3px);
+}
+
+/* PROFILE CARD */
+
+.profile-card{
+background:#1e293b;
+padding:30px;
+border-radius:14px;
+width:260px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* SECTION */
 
 section{
-    max-width:900px;
-    margin:auto;
-    padding:60px 20px;
+padding:90px 10%;
+max-width:1100px;
+margin:auto;
 }
 
 h2{
-    margin-bottom:20px;
-    color:#111827;
-    border-bottom:2px solid #e5e7eb;
-    padding-bottom:8px;
+margin-bottom:25px;
+color:#60a5fa;
 }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+section p{
+max-width:780px;
+font-size:16px;
+color:#cbd5f5;
+line-height:1.8;
 }
 
-.skill{
-    background:#e5e7eb;
-    padding:8px 14px;
-    border-radius:6px;
+/* SKILLS */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
 }
+
+.skill-card{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+border:1px solid #334155;
+transition:0.25s;
+}
+
+.skill-card:hover{
+transform:translateY(-5px);
+border-color:#3b82f6;
+}
+
+.skill-card h3{
+margin-bottom:15px;
+color:#cbd5f5;
+}
+
+.skill-card ul{
+list-style:disc;
+padding-left:20px;
+color:#cbd5f5;
+line-height:1.9;
+font-size:15px;
+}
+
+/* PROJECTS */
 
 .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:28px;
+margin-top:20px;
 }
 
 .project{
-    background:white;
-    padding:20px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+background:linear-gradient(145deg,#1e293b,#111827);
+padding:26px;
+border-radius:16px;
+border:1px solid #334155;
+transition:all 0.3s ease;
+position:relative;
+overflow:hidden;
+}
+
+.project::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(59,130,246,0.25),transparent);
+opacity:0;
+transition:opacity 0.4s;
+}
+
+.project:hover::before{
+opacity:1;
+}
+
+.project:hover{
+transform:translateY(-8px) scale(1.02);
+border-color:#3b82f6;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
 .project h3{
-    margin-bottom:10px;
+margin-bottom:10px;
+font-size:21px;
+color:#f1f5f9;
+font-weight:600;
 }
 
-.contact a{
-    display:block;
-    margin-top:8px;
-    color:#2563eb;
-    text-decoration:none;
+.project p{
+color:#a5b4fc;
+margin-bottom:12px;
+line-height:1.7;
+font-size:15px;
 }
+
+.project strong{
+display:block;
+margin-top:12px;
+margin-bottom:6px;
+color:#cbd5f5;
+font-size:14px;
+}
+
+.project ul{
+padding-left:18px;
+color:#94a3b8;
+line-height:1.7;
+font-size:14px;
+}
+
+.tech{
+margin-top:14px;
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+}
+
+.tech span{
+background:#020617;
+padding:6px 11px;
+border-radius:18px;
+font-size:12px;
+border:1px solid #334155;
+color:#94a3b8;
+transition:0.2s;
+}
+
+.tech span:hover{
+background:#2563eb;
+color:white;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.contact-card{
+background:#1e293b;
+padding:25px;
+border-radius:14px;
+border:1px solid #334155;
+}
+
+.contact-row{
+display:flex;
+justify-content:space-between;
+margin-bottom:15px;
+border-bottom:1px dashed #334155;
+padding-bottom:10px;
+}
+
+.contact-row a{
+color:#60a5fa;
+text-decoration:none;
+}
+
+/* FORM */
+
+form input,
+form textarea{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:18px;
+border-radius:8px;
+border:1px solid #334155;
+background:#020617;
+color:white;
+}
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:linear-gradient(90deg,#6366f1,#22c55e);
+color:white;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+opacity:0.9;
+}
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    padding:25px;
-    background:#111827;
-    color:white;
-    margin-top:40px;
+text-align:center;
+padding:35px;
+background:#020617;
+margin-top:80px;
+color:#94a3b8;
+font-size:14px;
+letter-spacing:0.3px;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Harsh Bothra</h1>
-<p>Computer Science Student | Learning Programming & Development</p>
-</header>
+<nav>
+<h2>Harsh</h2>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>Hi, I'm <span>Harsh Bothra</span></h1>
+
+<p>
+Computer Science student at <b>Vellore Institute of Technology</b> with strong interest in backend development,
+algorithms and building efficient software systems.
+</p>
+
+<p>
+I enjoy solving challenging problems and developing applications that combine strong
+computer science fundamentals with real-world impact.
+</p>
+
+
+<div class="buttons">
+<a href="#projects">View Projects</a>
+<a href="#contact">Contact</a>
+</div>
+
+</div>
+
+
+</div>
 
 <section id="about">
-<h2>About Me</h2>
+
+<h2>About</h2>
+
 <p>
-I am a Computer Science student at Vellore Institute of Technology (VIT). I am currently focused on learning programming, data structures, and core computer science concepts.
+I am a Computer Science student at <b>Vellore Institute of Technology (VIT)</b>
+with strong interest in software engineering and backend development.
 </p>
+
+<br>
+
+<p>
+My academic and project experience focuses on strengthening core computer science
+concepts such as data structures, algorithms, operating systems, and system design.
+</p>
+
+<br>
+
+<p>
+Through personal projects and academic work, I continuously explore new technologies
+and build applications that demonstrate efficient problem-solving and software design.
+</p>
+
+<br>
+
+<p>
+I am currently focused on strengthening my skills in backend development,
+data structures, and system design while continuously exploring modern
+technologies used in real-world software development.
+</p>
+
+<br>
+
+<p>
+My goal is to build efficient and scalable software systems while
+developing a deeper understanding of how complex applications work
+from both a theoretical and practical perspective.
+</p>
+
 </section>
 
 <section id="skills">
+
 <h2>Skills</h2>
-<div class="skills">
-<div class="skill">C++</div>
-<div class="skill">JavaScript</div>
-<div class="skill">HTML</div>
-<div class="skill">CSS</div>
-<div class="skill">Git</div>
-<div class="skill">Problem Solving</div>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+<h3>Programming Languages</h3>
+<ul>
+<li>C++</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>HTML</li>
+<li>CSS</li>
+</ul>
 </div>
+
+<div class="skill-card">
+<h3>Web Development</h3>
+<ul>
+<li>HTML5</li>
+<li>CSS3</li>
+<li>JavaScript</li>
+<li>Node.js</li>
+<li>Express.js</li>
+<li>REST APIs</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Tools & Technologies</h3>
+<ul>
+<li>Git & GitHub</li>
+<li>Linux (Basics)</li>
+<li>VS Code</li>
+<li>SQLite</li>
+</ul>
+</div>
+
+<div class="skill-card">
+<h3>Computer Science Concepts</h3>
+<ul>
+<li>Data Structures</li>
+<li>Algorithms</li>
+<li>Problem Solving</li>
+<li>Operating Systems</li>
+<li>Computer Networks</li>
+</ul>
+</div>
+
+</div>
+
 </section>
 
 <section id="projects">
+
 <h2>Projects</h2>
 
 <div class="projects">
 
 <div class="project">
-<h3>💰 Finance Expense Tracker</h3>
-<p>
-A modern backend system designed to help users manage their personal finances efficiently. The application allows users to record expenses, organize them into categories, and analyze spending habits over time.
-</p>
-<p>
-Features include secure user authentication, structured expense storage, and organized financial tracking that makes it easier to understand where money is being spent.
-</p>
+<h3>Finance Expense Tracker Backend</h3>
+<p>Backend system for managing and analyzing personal expenses.</p>
+
+<strong>Key Features</strong>
+<ul>
+<li>User authentication system</li>
+<li>Add, edit, and delete expense records</li>
+<li>Category-wise expense tracking</li>
+<li>Monthly expense summaries</li>
+</ul>
+
+<div class="tech">
+<span>Node.js</span>
+<span>Express</span>
+<span>SQLite</span>
+<span>REST API</span>
+</div>
+
 </div>
 
 <div class="project">
-<h3>🧠 EEG Signal Analysis (MDP Project)</h3>
-<p>
-This project focuses on analyzing EEG (Electroencephalogram) signals to study brain activity patterns. The system processes EEG data and applies computational techniques to identify patterns that may help in detecting neurological conditions.
-</p>
-<p>
-The project explores signal processing and machine learning concepts while working with real biomedical datasets to better understand brain signal behavior.
-</p>
+<h3>EEG Brain Signal Analysis (MDP Research Project)</h3>
+<p>Analysis of EEG brain signals using machine learning.</p>
+
+<strong>Key Features</strong>
+<ul>
+<li>EEG signal preprocessing</li>
+<li>Feature extraction</li>
+<li>Machine learning classification</li>
+<li>Signal visualization</li>
+</ul>
+
+<div class="tech">
+<span>Python</span>
+<span>Machine Learning</span>
+<span>Signal Processing</span>
+</div>
+
 </div>
 
 <div class="project">
-<h3>✅ Task Manager</h3>
-<p>
-A lightweight productivity application created to help users keep track of daily tasks and responsibilities. The system allows tasks to be created, updated, and removed easily.
-</p>
-<p>
-The goal of this project is to demonstrate structured data handling and simple task workflow management in a clean and efficient interface.
-</p>
+<h3>Task Manager Web Application</h3>
+<p>Application for organizing and managing tasks.</p>
+
+<strong>Key Features</strong>
+<ul>
+<li>Create and manage tasks</li>
+<li>Track task completion</li>
+<li>Simple and responsive UI</li>
+</ul>
+
+<div class="tech">
+<span>JavaScript</span>
+<span>HTML</span>
+<span>CSS</span>
+</div>
+
 </div>
 
 <div class="project">
-<h3>🎓 Student Management System</h3>
-<p>
-A small academic management application designed to organize and maintain student records. It allows storage of essential student information and simplifies the process of managing academic data.
-</p>
-<p>
-This project focuses on applying fundamental programming concepts to build a structured system for handling and retrieving student information efficiently.
-</p>
+<h3>Student Management System (C++ Project)</h3>
+<p>System for managing student academic records.</p>
+
+<strong>Key Features</strong>
+<ul>
+<li>Add and manage student records</li>
+<li>Efficient data retrieval</li>
+<li>Structured data management</li>
+</ul>
+
+<div class="tech">
+<span>C++</span>
+<span>Data Structures</span>
+</div>
+
 </div>
 
 </div>
@@ -164,16 +557,60 @@ This project focuses on applying fundamental programming concepts to build a str
 </section>
 
 <section id="contact">
+
 <h2>Contact</h2>
-<div class="contact">
-<a href="#">LinkedIn</a>
-<a href="#">GitHub</a>
-<a href="#">Email</a>
+
+<div class="contact-grid">
+
+<div class="contact-card">
+
+<div class="contact-row">
+<span>Name</span>
+<span>Harsh Bothra</span>
 </div>
+
+<div class="contact-row">
+<span>Email</span>
+<span>harshbothra2504@gmail.com</span>
+</div>
+
+<div class="contact-row">
+<span>GitHub</span>
+<a href="https://github.com/harsh-bothra2007">github.com/harsh-bothra2007</a>
+</div>
+
+<div class="contact-row">
+<span>LinkedIn</span>
+<a href="https://www.linkedin.com/in/harsh-bothra-2561383b6/">linkedin.com/in/harsh-bothra</a>
+</div>
+
+</div>
+
+<div class="contact-card">
+
+<form>
+
+<label>Name</label>
+<input type="text" placeholder="Your name">
+
+<label>Email</label>
+<input type="email" placeholder="yourmail@email.com">
+
+<label>Message</label>
+<textarea rows="4" placeholder="Write your message..."></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-© 2026 Harsh Bothra
+© Harsh Bothra
 </footer>
 
 </body>
